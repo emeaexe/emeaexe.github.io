@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pain in red</title>
+    <style type="text/css" media="screen">
+        body{
+            background-color: Red;
+        }
+        p{
+            color: Black;
+            font-family: Courier;
+        }
+        h2{
+            color: Black;
+            font-family: Courier;
+        }
+        h4{
+            color: Black;
+            font-family: Courier;
+        }
+        button{
+            font-family: Courier;
+        }
+        .slides{
+            display: none;
+        }
+        .numbertext, .text{
+            font-family: Courier;
+            color: Black;
+        }
+    </style>
+</head>
+<body>
+    <div id="alt">
+    <h2>PAIN</h2>
+    <h4>(2022)</h4>
+    <p>     Body intervention/ Performance.
+Inscriptions with red ink over my skin.
+My thoughts coming out.
+Some simbols, a lot of words.
+A repeating pattern,
+and everything has to be erased before someone sees it.
+</p>
+   <button type="button" id="up">Start Slideshow</button>
+    </div>
+    <!-- Slideshow container -->
+    <div id="cont">
+    <div class="slideshow-container">
+    <!-- Full-width images with number and caption text -->
+        <div class="slides" id="1">
+            <div class="numbertext">1 / 4</div>
+            <img src="01.jpeg" style="width:50%">
+            <div class="text">El dolor aflora.</div>
+        </div>
+        <div class="slides" id="2">
+            <div class="numbertext">2 / 4</div>
+            <img src="02.jpeg" style="width:50%">
+            <div class="text">Detail shot 1</div>
+        </div>
+        <div class="slides" id="3">
+            <div class="numbertext">3 / 4</div>
+            <img src="03.jpeg" style="width:50%">
+            <div class="text">Detail shot 2 - Notice symbols.</div>
+        </div>
+        <div class="slides" id="4">
+            <div class="numbertext">4 / 4</div>
+            <img src="04.gif" style="width:50%">
+            <div class="text">Alcohol wipe.</div>
+        </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <button type="button" id="close">Exit Slideshow</button>
+    <button type="button" id="prev" onclick="plusSlides(-1)">Prev</button>
+    <button type="button" id="next" onclick="plusSlides(1)">Next</button>
+    </div>
+    </div>
+</body>
+<script>
+    document.getElementById("cont").style.display = "none";
+    var prev = document.getElementById("prev")
+    let slideIndex = 1;
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+      slides[slideIndex-1].style.display = "block";
+    }
+    showSlides(slideIndex);
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+    document.getElementById("up").onclick = function(){
+        document.getElementById("cont").style.display = "block";
+        document.getElementById("alt").style.display = "none";
+    }
+    document.getElementById("close").onclick = function(){
+        document.getElementById("cont").style.display = "none";
+        document.getElementById("alt").style.display = "block";
+    }
+</script>
