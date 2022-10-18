@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>USE ME</title>
+    <style type="text/css" media="screen">
+        body{
+            background-color: black;
+        }
+        p{
+            color: White;
+            font-family: Courier;
+        }
+        h2{
+            color: White;
+            font-family: Courier;
+        }
+        h4{
+            color: White;
+            font-family: Courier;
+        }
+        button{
+            font-family: Courier;
+        }
+        .slides{
+            display: none;
+        }
+        .numbertext, .text{
+            font-family: Courier;
+            color: White;
+        }
+    </style>
+</head>
+<body>
+    <div id="alt">
+    <h2>USE ME</h2>
+    <h4>(2021)</h4>
+    <p>     This series explores through a violent graphism the toxic relationship that modern humans have with thechnology, particularily with computers. This toxic relationship generates an addiction to these devices, and some sensitive people, they say, may feel the devices constantly screaming "USE ME!" at them.</p>
+   <button type="button" id="up">Start Slideshow</button>
+    </div>
+    <!-- Slideshow container -->
+    <div id="cont">
+    <div class="slideshow-container">
+    <!-- Full-width images with number and caption text -->
+        <div class="slides" id="1">
+            <div class="numbertext">1 / 9</div>
+            <img src="01.jpeg" style="width:50%">
+            <div class="text">Attraction</div>
+        </div>
+        <div class="slides" id="2">
+            <div class="numbertext">2 / 9</div>
+            <img src="02.jpeg" style="width:50%">
+            <div class="text">Inhalation</div>
+        </div>
+        <div class="slides" id="3">
+            <div class="numbertext">3 / 9</div>
+            <img src="03.jpeg" style="width:50%">
+            <div class="text">USE ME!</div>
+        </div>
+        <div class="slides" id="4">
+            <div class="numbertext">4 / 9</div>
+            <img src="04.jpeg" style="width:50%">
+            <div class="text">Intervention of Google's homepage</div>
+        </div>
+        <div class="slides" id="5">
+            <div class="numbertext">5 / 9</div>
+            <img src="05.jpeg" style="width:50%">
+            <div class="text">Intervention of Google Meet's homepage</div>
+        </div>
+        <div class="slides" id="6">
+            <div class="numbertext">6 / 9</div>
+            <img src="06.jpeg" style="width:50%">
+            <div class="text">Intervention of Facebook's homepage</div>
+        </div>
+        <div class="slides" id="7">
+            <div class="numbertext">7 / 9</div>
+            <img src="07.jpeg" style="width:50%">
+            <div class="text">Thoughts</div>
+        </div>
+        <div class="slides" id="8">
+            <div class="numbertext">8 / 9</div>
+            <img src="08.jpeg" style="width:50%">
+            <div class="text">Metamorphosis</div>
+        </div>
+        <div class="slides" id="9">
+            <div class="numbertext">9 / 9</div>
+            <img src="09.jpeg" style="width:50%">
+            <div class="text">Magnetism</div>
+        </div>
+ 
+ 
+ 
+    <button type="button" id="close">Exit Slideshow</button>
+    <button type="button" id="prev" onclick="plusSlides(-1)">Prev</button>
+    <button type="button" id="next" onclick="plusSlides(1)">Next</button>
+    </div>
+    </div>
+</body>
+<script>
+    document.getElementById("cont").style.display = "none";
+    var prev = document.getElementById("prev")
+    let slideIndex = 1;
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+      slides[slideIndex-1].style.display = "block";
+    }
+    showSlides(slideIndex);
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+    document.getElementById("up").onclick = function(){
+        document.getElementById("cont").style.display = "block";
+        document.getElementById("alt").style.display = "none";
+    }
+    document.getElementById("close").onclick = function(){
+        document.getElementById("cont").style.display = "none";
+        document.getElementById("alt").style.display = "block";
+    }
+</script>
